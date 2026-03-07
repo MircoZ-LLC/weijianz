@@ -207,10 +207,11 @@
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}"
       crossorigin="anonymous"></script>
   {{ end }}
+{{ with .Site.Params.weglotApiKey }}
 <script defer type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
 <script>document.addEventListener("DOMContentLoaded", function() {
   Weglot.initialize({
-  api_key: "{{ .Site.Params.weglotApiKey }}",
+  api_key: "{{ . }}",
   switchers: [{
     style: {
       full_name: false,
@@ -220,5 +221,6 @@
       flag_type: "circle"
     }
   }]
-})});</script>
+});});</script>
+{{ end }}
 </head>

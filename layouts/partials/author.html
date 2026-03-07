@@ -9,8 +9,11 @@
     {{ end }}
     {{ if $authorImage }}
       {{ $final := $authorImage }}
+      {{ $squareImage := $authorImage }}
       {{ if not (or $disableImageOptimization (eq $authorImage.MediaType.SubType "svg")) }}
         {{ $final = $authorImage.Fill "192x192" }}
+        {{ $shortSide := int (math.Min $authorImage.Width $authorImage.Height) }}
+        {{ $squareImage = $authorImage.Crop (printf "%dx%d" $shortSide $shortSide ) }}
       {{ end }}
       <img
         class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"
