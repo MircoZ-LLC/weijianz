@@ -1,5 +1,5 @@
 ---
-title: 'About'
+title: "Professional Resume"
 date: 2026-03-07
 showDate: false
 showReadingTime: false

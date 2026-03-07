@@ -1,9 +1,10 @@
-baseURL = 'https://mircoz-llc.github.io/weijianz/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Weijian Zhang'
 theme = 'blowfish'
 
 [params]
+  customCSS = ['css/custom.css']
   colorScheme = 'neon'
   defaultAppearance = 'dark'
   autoSwitchAppearance = true
@@ -12,7 +13,8 @@ theme = 'blowfish'
   description = 'Software Engineer | AWS | Distributed Systems | Agentic AI'
 
   [params.homepage]
-    layout = 'profile'
+    layout = 'hero'
+    heroBackground = 'gradient'
     showRecent = true
     recentLimit = 5
 
@@ -27,3 +29,18 @@ theme = 'blowfish'
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
+
+[[menu.main]]
+  name = 'Home'
+  url = '/'
+  weight = 10
+
+[[menu.main]]
+  name = 'Resume'
+  url = '/about/'
+  weight = 20
+
+[[menu.main]]
+  name = 'Posts'
+  url = '/posts/'
+  weight = 30
