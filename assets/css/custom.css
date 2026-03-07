@@ -13,7 +13,7 @@ body.dark {
 
 /* 简历排版：垂直节点 + 缩进风格 */
 .prose h3, .prose h4 {
-  display: block !important;
+  display: block;
   width: 100% !important;
   margin-bottom: 0.1rem !important; /* 进一步压缩标题与日期的间距 */
 }
@@ -32,7 +32,7 @@ body.dark {
 
 /* 日期样式：强制换行并增加缩进 (Tab) */
 .resume-date, .role-date {
-  display: block !important; 
+  display: block; 
   padding-left: 2rem !important; /* 模拟一个 Tab 的缩进量 */
   font-size: 0.9rem !important;
   font-weight: 500 !important;
@@ -136,4 +136,65 @@ body.dark {
 
 .header header nav ul li a:hover::after {
   width: 100%;
+}
+
+/* 头像霓虹边框效果 */
+.author-image img {
+  border: 3px solid rgba(34, 211, 238, 0.4);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  transition: all 0.4s ease;
+}
+
+.author-image img:hover {
+  border-color: rgba(168, 85, 247, 0.8);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* 头像容器居中对齐 */
+.author-image {
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 2rem !important;
+  width: 100% !important;
+}
+
+.author-image img {
+  width: 160px !important;
+  height: 160px !important;
+  border-radius: 9999px !important;
+  object-fit: cover !important;
+  margin: 0 auto !important;
+}
+
+/* 深度修复：强制头像在 Hero 布局中绝对居中 */
+article.prose .relative img.rounded-full {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+  max-width: none !important; /* 防止被 prose 限制宽度 */
+  border-radius: 9999px !important;
+}
+
+/* 移除可能导致偏移的父容器内补白 */
+.relative.px-4.py-16 {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* 针对新头像 avatar_v2 的极致对齐 */
+.rounded-full[src*='avatar_v2'] {
+  object-fit: contain !important; /* 确保整个人物都能完整显示在圆圈里 */
+  object-position: center !important;
+  background-color: transparent !important; /* 防止背景色干扰 */
+}
+
+/* 修复放大时出现两张照片的问题 */
+
+/* 精准修复：当头像放大时，仅隐藏留在原位的背景底图，防止重影 */
+.medium-zoom-image--hidden {
+  visibility: hidden !important; /* 使用 visibility 隐藏原位底图 */
 }

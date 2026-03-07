@@ -19,6 +19,7 @@ theme = 'blowfish'
     recentLimit = 5
 
   [params.author]
+    image = "avatar_v2.png"
     name = 'Weijian Zhang'
     headline = 'Software Engineer @ AWS'
     bio = 'Building cloud infrastructure and Agentic AI solutions. ECS/Fargate, distributed systems, Java, Python.'
