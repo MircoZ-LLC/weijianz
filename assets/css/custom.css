@@ -7,7 +7,7 @@
 }
 
 /* 渐变背景 */
-html.dark {
+html.dark, html.dark body {
   background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
 }
 
