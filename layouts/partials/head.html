@@ -208,5 +208,16 @@
       crossorigin="anonymous"></script>
   {{ end }}
 <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-<script>Weglot.initialize({ api_key: "wg_f9edd1da0ec9f1cda6d0d6405cf3bd6c1", hide_option_flags: false, flag_type: "shiny" });</script>
+<script>Weglot.initialize({
+  api_key: "wg_f9edd1da0ec9f1cda6d0d6405cf3bd6c1",
+  switchers: [{
+    style: {
+      full_name: false,
+      with_name: false,
+      is_dropdown: true,
+      with_flags: true,
+      flag_type: "circle"
+    }
+  }]
+});</script>
 </head>
