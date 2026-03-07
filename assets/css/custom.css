@@ -219,9 +219,4 @@ article.prose .relative img.rounded-full {
   border-radius: 8px !important;
 }
 
-/* disable zoom on author avatar */
-.author-image img,
-img[data-zoom-src],
-.nozoom {
-  pointer-events: none !important;
-}
+/* zoom disabled via author.html override */
