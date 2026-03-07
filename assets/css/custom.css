@@ -198,3 +198,23 @@ article.prose .relative img.rounded-full {
 .medium-zoom-image--hidden {
   visibility: hidden !important; /* 使用 visibility 隐藏原位底图 */
 }
+
+/* Weglot language switcher */
+.weglot-container .wg-drop.country-selector {
+  background: rgba(56, 11, 118, 0.85) !important;
+  border: 1px solid rgba(131, 56, 236, 0.5) !important;
+  border-radius: 8px !important;
+}
+
+.weglot-container .wg-drop.country-selector a {
+  color: #dac4f9 !important;
+}
+
+.weglot-container .wg-drop.country-selector a:hover {
+  background: rgba(131, 56, 236, 0.3) !important;
+}
+
+.weglot-container .wg-drop.country-selector .wg-current {
+  background: rgba(73, 15, 155, 0.9) !important;
+  border-radius: 8px !important;
+}
