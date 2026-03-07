@@ -143,6 +143,11 @@ body.dark {
   border: 3px solid rgba(34, 211, 238, 0.4);
   box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
   transition: all 0.4s ease;
+  width: 160px !important;
+  height: 160px !important;
+  border-radius: 9999px !important;
+  object-fit: cover !important;
+  margin: 0 auto !important;
 }
 
 .author img:hover {
@@ -157,14 +162,6 @@ body.dark {
   justify-content: center !important;
   margin-bottom: 2rem !important;
   width: 100% !important;
-}
-
-.author img {
-  width: 160px !important;
-  height: 160px !important;
-  border-radius: 9999px !important;
-  object-fit: cover !important;
-  margin: 0 auto !important;
 }
 
 /* 深度修复：强制头像在 Hero 布局中绝对居中
