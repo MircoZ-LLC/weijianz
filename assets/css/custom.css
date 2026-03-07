@@ -2,30 +2,138 @@
 .glass {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-/* 霓虹发光文字和边框 */
-.neon-glow {
-  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(34, 211, 238, 0.3);
-}
-
-.neon-border {
-  border: 2px solid rgba(168, 85, 247, 0.4);
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
-  transition: all 0.3s ease;
-}
-
-.neon-border:hover {
-  border-color: rgba(168, 85, 247, 0.8);
-  box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
-  transform: translateY(-2px);
-}
-
-/* 增强的渐变动画背景 */
+/* 渐变背景 */
 body.dark {
   background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
+}
+
+/* 简历排版：垂直节点 + 缩进风格 */
+.prose h3, .prose h4 {
+  display: block !important;
+  width: 100% !important;
+  margin-bottom: 0.1rem !important; /* 进一步压缩标题与日期的间距 */
+}
+
+.prose h3 {
+  color: #22d3ee !important; 
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+}
+
+.prose h4 {
+  color: #f472b6 !important; 
+  margin-top: 1.8rem !important;
+  font-size: 1.2rem !important;
+}
+
+/* 日期样式：强制换行并增加缩进 (Tab) */
+.resume-date, .role-date {
+  display: block !important; 
+  padding-left: 2rem !important; /* 模拟一个 Tab 的缩进量 */
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: #94a3b8 !important; /* Slate-400 */
+  font-family: 'JetBrains Mono', monospace !important;
+  margin-bottom: 0.8rem !important; 
+  letter-spacing: 0.02em;
+}
+
+/* 使用一个更简约的符号引导日期，增强缩进视觉感 */
+.resume-date::before, .role-date::before {
+  content: '— '; 
+  color: rgba(34, 211, 238, 0.4); /* 半透明青色，低调且专业 */
+}
+
+/* 关键词和列表优化 */
+.prose strong { 
+  color: #22d3ee !important; 
+}
+
+.prose p, .prose li { 
+  color: #cbd5e1 !important; 
+}
+
+.prose ul {
+  margin-top: 0.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+/* 极光流光按钮 */
+.btn-neon {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #fff !important;
+  background: linear-gradient(45deg, #22d3ee, #a855f7);
+  border-radius: 9999px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  text-decoration: none !important;
+}
+
+.btn-neon:hover {
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.5);
+  background: linear-gradient(45deg, #06b6d4, #d946ef);
+}
+
+/* 扫光动画 */
+.btn-neon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.btn-neon:hover::after {
+  left: 100%;
+}
+
+/* 导航栏菜单美化 */
+.header header nav ul li a {
+  position: relative;
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.header header nav ul li a:hover {
+  color: #22d3ee !important; /* 青色高亮 */
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+}
+
+/* 霓虹下划线动画 */
+.header header nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #a855f7; /* 紫色线条 */
+  box-shadow: 0 0 10px #a855f7;
+  transition: width 0.3s ease;
+}
+
+.header header nav ul li a:hover::after {
+  width: 100%;
 }

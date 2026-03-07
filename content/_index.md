@@ -20,8 +20,8 @@ Building AWS Cloud Infrastructure
 ### **Software Engineer @ AWS**
 *Specializing in ECS, Fargate, and High-Scale Architectures.*
 
-<div class="mt-10 flex flex-wrap gap-4">
-  <a href="/about/" class="neon-border px-8 py-3 rounded-full font-bold text-lg bg-white/5 hover:bg-white/10">
-    View Full Resume
+<div class="mt-14 flex justify-center w-full">
+  <a href="/posts/" class="btn-neon">
+    Explore Architecture
   </a>
 </div>

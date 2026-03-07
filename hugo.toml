@@ -27,8 +27,8 @@ theme = 'blowfish'
       { email = 'mailto:zwj102030@gmail.com' }
     ]
 
-[outputs]
-  home = ['HTML', 'RSS', 'JSON']
+[markup.goldmark.renderer]
+  unsafe = true
 
 [[menu.main]]
   name = 'Home'
@@ -44,3 +44,6 @@ theme = 'blowfish'
   name = 'Posts'
   url = '/posts/'
   weight = 30
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']

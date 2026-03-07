@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Weijian Zhang</title>
-    <link>https://mircoz-llc.github.io/weijianz/tags/</link>
+    <link>//localhost/tags/</link>
     <description>Recent content in Tags on Weijian Zhang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2026 Weijian Zhang</copyright>
-    <lastBuildDate>Sat, 07 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://mircoz-llc.github.io/weijianz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="//localhost/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>AWS</title>
-      <link>https://mircoz-llc.github.io/weijianz/tags/aws/</link>
+      <link>//localhost/tags/aws/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mircoz-llc.github.io/weijianz/tags/aws/</guid>
+      <guid>//localhost/tags/aws/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Distributed Systems</title>
-      <link>https://mircoz-llc.github.io/weijianz/tags/distributed-systems/</link>
+      <link>//localhost/tags/distributed-systems/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mircoz-llc.github.io/weijianz/tags/distributed-systems/</guid>
+      <guid>//localhost/tags/distributed-systems/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>DynamoDB</title>
-      <link>https://mircoz-llc.github.io/weijianz/tags/dynamodb/</link>
+      <link>//localhost/tags/dynamodb/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mircoz-llc.github.io/weijianz/tags/dynamodb/</guid>
+      <guid>//localhost/tags/dynamodb/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>ECS</title>
-      <link>https://mircoz-llc.github.io/weijianz/tags/ecs/</link>
+      <link>//localhost/tags/ecs/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mircoz-llc.github.io/weijianz/tags/ecs/</guid>
+      <guid>//localhost/tags/ecs/</guid>
       <description></description>
       
     </item>

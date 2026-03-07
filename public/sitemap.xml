@@ -3,19 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://mircoz-llc.github.io/weijianz/about/</loc>
+    <loc>//localhost/posts/</loc>
     <lastmod>2026-03-07T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://mircoz-llc.github.io/weijianz/posts/</loc>
+    <loc>//localhost/about/</loc>
     <lastmod>2026-03-07T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://mircoz-llc.github.io/weijianz/posts/ghost-in-the-machine-ip-reuse/</loc>
+    <loc>//localhost/posts/ghost-in-the-machine-ip-reuse/</loc>
     <lastmod>2026-03-07T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://mircoz-llc.github.io/weijianz/</loc>
+    <loc>//localhost/</loc>
     <lastmod>2026-03-07T00:00:00+00:00</lastmod>
   </url>
 </urlset>
