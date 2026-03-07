@@ -9,10 +9,6 @@ theme = 'blowfish'
   autoSwitchAppearance = true
   enableSearch = true
   description = 'Architecting the Future of Cloud & AI'
-  # Weglot API key — override via GitHub secret HUGO_PARAMS_WEGLOTAPIKEY
-  # Once secret is added to GitHub repo, delete the value below (leave key empty or remove line)
-  weglotApiKey = "wg_f9edd1da0ec9f1cda6d0d6405cf3bd6c1"
-
   [params.footer]
     showScrollToTop = true
 
