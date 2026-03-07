@@ -3,9 +3,14 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://mircoz-llc.github.io/weijianz/posts/</loc>
+    <loc>https://mircoz-llc.github.io/weijianz/about/</loc>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://mircoz-llc.github.io/weijianz/</loc>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mircoz-llc.github.io/weijianz/posts/</loc>
   </url>
 </urlset>

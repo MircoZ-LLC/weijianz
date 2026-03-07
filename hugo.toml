@@ -1,6 +1,6 @@
 baseURL = 'https://mircoz-llc.github.io/weijianz/'
 languageCode = 'en-us'
-title = 'Weijian'
+title = 'Weijian Zhang'
 theme = 'blowfish'
 
 [params]
@@ -9,6 +9,7 @@ theme = 'blowfish'
   autoSwitchAppearance = true
   enableSearch = true
   showScrollToTop = true
+  description = 'Software Engineer | AWS | Distributed Systems | Agentic AI'
 
   [params.homepage]
     layout = 'profile'
@@ -16,10 +17,13 @@ theme = 'blowfish'
     recentLimit = 5
 
   [params.author]
-    name = 'Weijian'
-    headline = 'Software Engineer'
-    bio = 'Building things on the internet.'
-    links = []
+    name = 'Weijian Zhang'
+    headline = 'Software Engineer @ AWS'
+    bio = 'Building cloud infrastructure and Agentic AI solutions. ECS/Fargate, distributed systems, Java, Python.'
+    links = [
+      { linkedin = 'https://www.linkedin.com/in/weijianz/' },
+      { email = 'mailto:zwj102030@gmail.com' }
+    ]
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
