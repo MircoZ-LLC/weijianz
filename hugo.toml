@@ -4,7 +4,7 @@ title = 'Weijian Zhang'
 theme = 'blowfish'
 
 [params]
-  colorScheme = 'ocean'
+  colorScheme = 'neon'
   defaultAppearance = 'dark'
   autoSwitchAppearance = true
   enableSearch = true
