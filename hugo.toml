@@ -1,11 +1,25 @@
 baseURL = 'https://mircoz-llc.github.io/weijianz/'
 languageCode = 'en-us'
-title = 'My Portfolio'
-theme = 'PaperMod'
+title = 'Weijian'
+theme = 'blowfish'
 
 [params]
-  author = 'Weijian'
-  description = 'Personal blog and portfolio'
+  colorScheme = 'ocean'
+  defaultAppearance = 'dark'
+  autoSwitchAppearance = true
+  enableSearch = true
+  showScrollToTop = true
+
+  [params.homepage]
+    layout = 'profile'
+    showRecent = true
+    recentLimit = 5
+
+  [params.author]
+    name = 'Weijian'
+    headline = 'Software Engineer'
+    bio = 'Building things on the internet.'
+    links = []
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
