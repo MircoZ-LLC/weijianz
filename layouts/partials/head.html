@@ -105,7 +105,7 @@
   {{ with resources.Get "css/custom.css" }}
     {{ $cssResources = $cssResources | append . }}
   {{ end }}
-  {{ if not .Site.Params.disableImageZoom | default true }}
+  {{ if not (.Site.Params.disableImageZoom | default false) }}
     {{ $cssResources = $cssResources | append (resources.Get "lib/zoom/style.css") }}
   {{ end }}
   {{ $bundleCSS := $cssResources | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint $alg }}
@@ -135,7 +135,7 @@
       src="{{ $jsZenMode.RelPermalink }}"
       integrity="{{ $jsZenMode.Data.Integrity }}"></script>
   {{ end }}
-  {{ if not .Site.Params.disableImageZoom | default true }}
+  {{ if not (.Site.Params.disableImageZoom | default false) }}
     {{ $zoomJS := resources.Get "lib/zoom/zoom.min.umd.js" | resources.Fingerprint $alg }}
     <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
   {{ end }}
@@ -207,8 +207,9 @@
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}"
       crossorigin="anonymous"></script>
   {{ end }}
-<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-<script>Weglot.initialize({
+<script defer type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function() {
+  Weglot.initialize({
   api_key: "wg_f9edd1da0ec9f1cda6d0d6405cf3bd6c1",
   switchers: [{
     style: {
@@ -219,5 +220,5 @@
       flag_type: "circle"
     }
   }]
-});</script>
+})});</script>
 </head>

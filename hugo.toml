@@ -10,11 +10,11 @@ theme = 'blowfish'
   autoSwitchAppearance = true
   enableSearch = true
   showScrollToTop = true
-  description = 'Software Engineer | AWS | Distributed Systems | Agentic AI'
+  description = 'Architecting the Future of Cloud & AI'
 
   [params.homepage]
     layout = 'hero'
-    heroBackground = 'gradient'
+    heroBackground = 'background'
     showRecent = true
     recentLimit = 5
 
