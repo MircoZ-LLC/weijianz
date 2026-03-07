@@ -218,3 +218,10 @@ article.prose .relative img.rounded-full {
   background: rgba(73, 15, 155, 0.9) !important;
   border-radius: 8px !important;
 }
+
+/* disable zoom on author avatar */
+.author-image img,
+img[data-zoom-src],
+.nozoom {
+  pointer-events: none !important;
+}
