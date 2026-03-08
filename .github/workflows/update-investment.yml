@@ -9,8 +9,12 @@ on:
 jobs:
   update-prices:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Fetch prices & update markdown
         run: |
