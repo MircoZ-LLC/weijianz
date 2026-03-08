@@ -2,7 +2,7 @@ baseURL = 'https://weijianz.com/'
 languageCode = 'en-us'
 title = 'Weijian Zhang'
 theme = 'blowfish'
-mainSections = ['posts', 'diary']
+mainSections = ['posts', 'diary', 'investment']
 
 [params]
   colorScheme = 'neon'
@@ -51,6 +51,11 @@ mainSections = ['posts', 'diary']
   name = 'Diary'
   url = '/diary/'
   weight = 40
+
+[[menu.main]]
+  name = 'Investment'
+  url = '/investment/'
+  weight = 50
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
