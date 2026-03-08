@@ -30,8 +30,3 @@ jobs:
           git add content/investment/_index.md
           git diff --cached --quiet || git commit -m "chore: update investment prices $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
-
-      - name: Trigger deploy
-        run: gh workflow run deploy.yml
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -3,6 +3,9 @@ name: Deploy Hugo to GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: ["Update Investment Prices"]
+    types: [completed]
 
 concurrency:
   group: pages
