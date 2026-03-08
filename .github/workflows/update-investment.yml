@@ -16,38 +16,22 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install dependencies
+        run: pip install yfinance
+
       - name: Fetch prices & update markdown
         run: |
           python3 << 'EOF'
-          import subprocess, json
+          import yfinance as yf
           from datetime import datetime
-          import urllib.request
 
           TICKERS = ["TLT", "MSFT", "AMZN", "GOOG", "SNDK", "VOO"]
 
           def fetch_price(ticker):
-              # Step 1: get cookie
-              req = urllib.request.Request(
-                  "https://fc.yahoo.com",
-                  headers={"User-Agent": "Mozilla/5.0"}
-              )
-              opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor())
-              opener.open(req)
-
-              # Step 2: get crumb
-              crumb_req = urllib.request.Request(
-                  "https://query2.finance.yahoo.com/v1/test/getcrumb",
-                  headers={"User-Agent": "Mozilla/5.0"}
-              )
-              crumb = opener.open(crumb_req).read().decode()
-
-              # Step 3: fetch quote
-              url = f"https://query1.finance.yahoo.com/v7/finance/quote?symbols={ticker}&crumb={crumb}"
-              quote_req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-              data = json.loads(opener.open(quote_req).read())
-              q = data["quoteResponse"]["result"][0]
-              price = q["regularMarketPrice"]
-              prev  = q.get("regularMarketPreviousClose", price)
+              t = yf.Ticker(ticker)
+              info = t.fast_info
+              price = info.last_price
+              prev  = info.previous_close or price
               return price, (price - prev) / prev * 100
 
           rows = []
@@ -57,35 +41,33 @@ jobs:
                   arrow = "▲" if chg >= 0 else "▼"
                   color = "🟢" if chg >= 0 else "🔴"
                   rows.append(f"| {ticker} | ${price:,.2f} | {color} {arrow} {abs(chg):.2f}% | — |")
+                  print(f"{ticker}: ${price:.2f} ({chg:+.2f}%)")
               except Exception as e:
                   rows.append(f"| {ticker} | N/A | — | — |")
+                  print(f"{ticker}: ERROR - {e}")
 
           rows.append("| Pokémon TCG Cards | — | — | — |")
 
           now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
           content = f"""---
-          title: "Investment"
-          description: "Market notes, portfolio thoughts, and investment research"
-          showDate: false
-          showReadingTime: false
-          ---
+title: "Investment"
+description: "Market notes, portfolio thoughts, and investment research"
+showDate: false
+showReadingTime: false
+---
 
-          ## Current Holdings
+## Current Holdings
 
-          | Ticker / Asset | Price | Day Change | % of Portfolio |
-          |----------------|-------|------------|---------------|
-          {chr(10).join(rows)}
+| Ticker / Asset | Price | Day Change | % of Portfolio |
+|----------------|-------|------------|---------------|
+{chr(10).join(rows)}
 
-          *Last updated: {now} · Auto-refreshed by GitHub Actions*
-          """
-          # de-indent
-          import textwrap
-          content = textwrap.dedent(content)
+*Last updated: {now} · Auto-refreshed by GitHub Actions*
+"""
 
           with open("content/investment/_index.md", "w") as f:
               f.write(content)
-
-          print("Updated investment page")
+          print("Done")
           EOF
 
       - name: Commit if changed
