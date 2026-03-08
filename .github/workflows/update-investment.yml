@@ -2,9 +2,9 @@ name: Update Investment Prices
 
 on:
   schedule:
-    - cron: '0 21 * * 1-5'   # 1pm PST weekdays (21:00 UTC)
-    - cron: '0 1  * * 2-6'   # 5pm PST weekdays (01:00 UTC next day)
-  workflow_dispatch:           # allow manual trigger
+    - cron: '0 21 * * 1-5'   # 1pm PST weekdays
+    - cron: '0 1  * * 2-6'   # 5pm PST weekdays
+  workflow_dispatch:
 
 jobs:
   update-prices:
@@ -20,55 +20,7 @@ jobs:
         run: pip install yfinance
 
       - name: Fetch prices & update markdown
-        run: |
-          python3 << 'EOF'
-          import yfinance as yf
-          from datetime import datetime
-
-          TICKERS = ["TLT", "MSFT", "AMZN", "GOOG", "SNDK", "VOO"]
-
-          def fetch_price(ticker):
-              t = yf.Ticker(ticker)
-              info = t.fast_info
-              price = info.last_price
-              prev  = info.previous_close or price
-              return price, (price - prev) / prev * 100
-
-          rows = []
-          for ticker in TICKERS:
-              try:
-                  price, chg = fetch_price(ticker)
-                  arrow = "▲" if chg >= 0 else "▼"
-                  color = "🟢" if chg >= 0 else "🔴"
-                  rows.append(f"| {ticker} | ${price:,.2f} | {color} {arrow} {abs(chg):.2f}% | — |")
-                  print(f"{ticker}: ${price:.2f} ({chg:+.2f}%)")
-              except Exception as e:
-                  rows.append(f"| {ticker} | N/A | — | — |")
-                  print(f"{ticker}: ERROR - {e}")
-
-          rows.append("| Pokémon TCG Cards | — | — | — |")
-
-          now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
-          content = f"""---
-title: "Investment"
-description: "Market notes, portfolio thoughts, and investment research"
-showDate: false
-showReadingTime: false
----
-
-## Current Holdings
-
-| Ticker / Asset | Price | Day Change | % of Portfolio |
-|----------------|-------|------------|---------------|
-{chr(10).join(rows)}
-
-*Last updated: {now} · Auto-refreshed by GitHub Actions*
-"""
-
-          with open("content/investment/_index.md", "w") as f:
-              f.write(content)
-          print("Done")
-          EOF
+        run: python3 scripts/update_investment.py
 
       - name: Commit if changed
         run: |
