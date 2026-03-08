@@ -46,5 +46,10 @@ theme = 'blowfish'
   url = '/posts/'
   weight = 30
 
+[[menu.main]]
+  name = '日记'
+  url = '/diary/'
+  weight = 40
+
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
