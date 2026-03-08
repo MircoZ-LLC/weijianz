@@ -24,7 +24,7 @@ theme = 'blowfish'
     bio = 'Building cloud infrastructure and Agentic AI solutions. ECS/Fargate, distributed systems, Java, Python.'
     links = [
       { linkedin = 'https://www.linkedin.com/in/weijianz/' },
-      { github = 'https://github.com/zwj102030' },
+      { github = 'https://github.com/weijianz-opc' },
       { email = 'mailto:zwj102030@gmail.com' }
     ]
 
