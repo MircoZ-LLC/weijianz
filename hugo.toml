@@ -47,7 +47,7 @@ theme = 'blowfish'
   weight = 30
 
 [[menu.main]]
-  name = '日记'
+  name = 'Diary'
   url = '/diary/'
   weight = 40
 

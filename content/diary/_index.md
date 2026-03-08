@@ -1,4 +1,4 @@
 ---
-title: "日记"
-description: "学习记录、随想、日常"
+title: "Diary"
+description: "Learning notes, thoughts, and daily logs"
 ---
