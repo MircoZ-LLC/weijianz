@@ -2,6 +2,7 @@ baseURL = 'https://weijianz.com/'
 languageCode = 'en-us'
 title = 'Weijian Zhang'
 theme = 'blowfish'
+mainSections = ['posts', 'diary']
 
 [params]
   colorScheme = 'neon'
