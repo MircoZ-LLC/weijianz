@@ -14,4 +14,5 @@ showReadingTime: false
 | AMZN | — |
 | GOOG | — |
 | SNDK | — |
+| VOO | — |
 | Pokémon TCG Cards | — |
